@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hive & Swarm | Futuristic Bug Thrift</title>
+    <!-- Google Fonts: Orbitron for futuristic headers, Inter for readable text -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🪲</text></svg>">
+</head>
+<body>
+
+    <!-- Background Animation Elements -->
+    <div class="glow-bg top-left"></div>
+    <div class="glow-bg bottom-right"></div>
+    <div class="grid-overlay"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">
+            <i class="fa-solid fa-bug"></i>
+            <span>HIVE & SWARM</span>
+        </div>
+        <div class="nav-actions">
+            <button id="theme-toggle" class="icon-btn" aria-label="Toggle Dark/Light Mode">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+            <div class="cart-container" id="cart-icon">
+                <button class="icon-btn" aria-label="Open Cart">
+                    <i class="fa-solid fa-droplet" style="color: var(--blood-red);"></i>
+                </button>
+                <span id="cart-count">0</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Welcome to the Next Era of the Swarm.</h1>
+            <p>Ants, Flies, Bees—upgrade your exoskeleton. Latest eyeglasses, neo-feathers, titanium wings, and pure sweet blood.</p>
+            <button class="cta-btn" onclick="document.getElementById('products-section').scrollIntoView({behavior: 'smooth'})">BROWSE ARTIFACTS</button>
+        </div>
+    </header>
+
+    <!-- Main Products Section -->
+    <main id="products-section" class="container">
+        <h2 class="section-title">LATEST ACQUISITIONS</h2>
+        <div class="product-grid" id="product-grid">
+            <!-- Product Cards will be injected via JS -->
+        </div>
+    </main>
+
+    <!-- Cart Modal Overlay -->
+    <div class="modal-overlay" id="cart-modal">
+        <div class="modal-content glass-panel">
+            <button class="close-btn" id="close-cart"><i class="fa-solid fa-xmark"></i></button>
+            <h2>YOUR TRIBUTE</h2>
+            
+            <div class="cart-items" id="cart-items">
+                <!-- Cart items list injected via JS -->
+            </div>
+            
+            <div class="cart-summary">
+                <div class="total-row">
+                    <span>Total Cost:</span>
+                    <span class="total-price"><i class="fa-solid fa-droplet"></i> <span id="cart-total">0</span> drops of Human Blood</span>
+                </div>
+                <!-- Checkout Payment Mechanism -->
+                <button class="checkout-btn" id="checkout-btn">EXTRACT BLOOD & PLACE ORDER</button>
+            </div>
+            
+            <!-- Success/Payment Mechanism Message -->
+            <div id="payment-success" class="hidden">
+                <i class="fa-solid fa-check-circle" style="color: var(--neon-green); font-size: 3rem; margin-bottom: 1rem;"></i>
+                <h3>TRIBUTE ACCEPTED!</h3>
+                <p>Blood extracted successfully. The swarm will deliver your artifacts shortly.</p>
+                <button class="cta-btn" id="continue-shopping">RETURN TO NEST</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Hive & Swarm. For the glory of the Queen.</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
